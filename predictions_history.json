@@ -1,0 +1,834 @@
+{
+  "GC=F_15m": [
+    {
+      "timestamp": "2026-04-06 05:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.2926967442035675,
+      "confidence": 0.23415741324424744,
+      "current_price": 4689.89990234375,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 08:30:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.31922250986099243,
+      "confidence": 0.25537800788879395,
+      "current_price": 4719.2998046875,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:15:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.36392858624458313,
+      "confidence": 0.29114288091659546,
+      "current_price": 4715.5,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.3728247582912445,
+      "confidence": 0.29825982451438904,
+      "current_price": 4717.7998046875,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.3728247582912445,
+      "confidence": 0.29825982451438904,
+      "current_price": 4718.0,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.3793945014476776,
+      "confidence": 0.30351561307907104,
+      "current_price": 4718.39990234375,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.3793945014476776,
+      "confidence": 0.30351561307907104,
+      "current_price": 4720.0,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 11:30:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.3813481330871582,
+      "confidence": 0.30507850646972656,
+      "current_price": 4716.5,
+      "period": "60d"
+    }
+  ],
+  "GC=F_30m": [
+    {
+      "timestamp": "2026-04-06 05:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.05941647291183472,
+      "confidence": 0.047533176839351654,
+      "current_price": 4689.89990234375,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 08:30:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.025563709437847137,
+      "confidence": 0.0,
+      "current_price": 4719.2001953125,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.014255475252866745,
+      "confidence": 0.0,
+      "current_price": 4715.5,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.011302158236503601,
+      "confidence": 0.0,
+      "current_price": 4718.0,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.011302158236503601,
+      "confidence": 0.0,
+      "current_price": 4718.0,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.011302158236503601,
+      "confidence": 0.0,
+      "current_price": 4718.2001953125,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.011302158236503601,
+      "confidence": 0.0,
+      "current_price": 4720.0,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 11:30:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.006097904406487942,
+      "confidence": 0.0,
+      "current_price": 4716.7998046875,
+      "period": "60d"
+    }
+  ],
+  "GC=F_1h": [
+    {
+      "timestamp": "2026-04-06 05:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.012916537933051586,
+      "confidence": 0.0,
+      "current_price": 4689.10009765625,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.012916537933051586,
+      "confidence": 0.0,
+      "current_price": 4719.2001953125,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.012916537933051586,
+      "confidence": 0.0,
+      "current_price": 4716.5,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.012916537933051586,
+      "confidence": 0.0,
+      "current_price": 4718.0,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.012916537933051586,
+      "confidence": 0.0,
+      "current_price": 4718.0,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.012916537933051586,
+      "confidence": 0.0,
+      "current_price": 4719.2001953125,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.012916537933051586,
+      "confidence": 0.0,
+      "current_price": 4720.0,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 11:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.012916537933051586,
+      "confidence": 0.0,
+      "current_price": 4716.7998046875,
+      "period": "3mo"
+    }
+  ],
+  "GC=F_4h": [
+    {
+      "timestamp": "2026-04-06 04:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.31277021765708923,
+      "confidence": 0.25021615624427795,
+      "current_price": 4688.89990234375,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.3145391047000885,
+      "confidence": 0.2516312897205353,
+      "current_price": 4719.2001953125,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.3145436644554138,
+      "confidence": 0.25163495540618896,
+      "current_price": 4716.5,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.3145436644554138,
+      "confidence": 0.25163495540618896,
+      "current_price": 4718.0,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.3145436644554138,
+      "confidence": 0.25163495540618896,
+      "current_price": 4718.0,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.3145436644554138,
+      "confidence": 0.25163495540618896,
+      "current_price": 4720.0,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.3145436644554138,
+      "confidence": 0.25163495540618896,
+      "current_price": 4719.7998046875,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.3145436644554138,
+      "confidence": 0.25163495540618896,
+      "current_price": 4716.7998046875,
+      "period": "6mo"
+    }
+  ],
+  "EURUSD=X_15m": [
+    {
+      "timestamp": "2026-04-06 06:15:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": 0.03703925758600235,
+      "confidence": 0.0,
+      "current_price": 1.1530035734176636,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 06:30:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": 0.018259510397911072,
+      "confidence": 0.0,
+      "current_price": 1.1527377367019653,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 06:30:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": 0.018259510397911072,
+      "confidence": 0.0,
+      "current_price": 1.1527377367019653,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "STRONG BUY",
+      "predicted_change_percent": 0.5014380216598511,
+      "confidence": 0.5014380216598511,
+      "current_price": 1.1546010971069336,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "STRONG BUY",
+      "predicted_change_percent": 0.5014380216598511,
+      "confidence": 0.5014380216598511,
+      "current_price": 1.1546010971069336,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "STRONG BUY",
+      "predicted_change_percent": 0.5014380216598511,
+      "confidence": 0.5014380216598511,
+      "current_price": 1.1552680730819702,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "STRONG BUY",
+      "predicted_change_percent": 0.5014380216598511,
+      "confidence": 0.5014380216598511,
+      "current_price": 1.1552680730819702,
+      "period": "60d"
+    }
+  ],
+  "EURUSD=X_30m": [
+    {
+      "timestamp": "2026-04-06 06:00:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.9855241775512695,
+      "confidence": 1.0,
+      "current_price": 1.1530035734176636,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 06:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.9573111534118652,
+      "confidence": 1.0,
+      "current_price": 1.1527377367019653,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 06:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.9573111534118652,
+      "confidence": 1.0,
+      "current_price": 1.1527377367019653,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.99884033203125,
+      "confidence": 1.0,
+      "current_price": 1.1546010971069336,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.99884033203125,
+      "confidence": 1.0,
+      "current_price": 1.1546010971069336,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.9988709688186646,
+      "confidence": 1.0,
+      "current_price": 1.1552680730819702,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.9988709688186646,
+      "confidence": 1.0,
+      "current_price": 1.1552680730819702,
+      "period": "60d"
+    }
+  ],
+  "EURUSD=X_1h": [
+    {
+      "timestamp": "2026-04-06 06:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.05269748345017433,
+      "confidence": 0.042157988995313644,
+      "current_price": 1.1530035734176636,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 06:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.05269748345017433,
+      "confidence": 0.042157988995313644,
+      "current_price": 1.1527377367019653,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 06:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.05269748345017433,
+      "confidence": 0.042157988995313644,
+      "current_price": 1.1527377367019653,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.052002064883708954,
+      "confidence": 0.04160165414214134,
+      "current_price": 1.1546010971069336,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.052002064883708954,
+      "confidence": 0.04160165414214134,
+      "current_price": 1.1546010971069336,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.05201151221990585,
+      "confidence": 0.04160921275615692,
+      "current_price": 1.1552680730819702,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.05201151221990585,
+      "confidence": 0.04160921275615692,
+      "current_price": 1.1552680730819702,
+      "period": "3mo"
+    }
+  ],
+  "EURUSD=X_4h": [
+    {
+      "timestamp": "2026-04-06 03:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.4849238395690918,
+      "confidence": 0.38793906569480896,
+      "current_price": 1.1530035734176636,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 03:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.4849238395690918,
+      "confidence": 0.38793906569480896,
+      "current_price": 1.1527377367019653,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 03:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.4849238395690918,
+      "confidence": 0.38793906569480896,
+      "current_price": 1.1527377367019653,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 07:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.48538288474082947,
+      "confidence": 0.38830631971359253,
+      "current_price": 1.1546010971069336,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 07:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.48538288474082947,
+      "confidence": 0.38830631971359253,
+      "current_price": 1.155001163482666,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 07:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.48538288474082947,
+      "confidence": 0.38830631971359253,
+      "current_price": 1.1552680730819702,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 07:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.48538288474082947,
+      "confidence": 0.38830631971359253,
+      "current_price": 1.1552680730819702,
+      "period": "6mo"
+    }
+  ],
+  "GBPUSD=X_15m": [
+    {
+      "timestamp": "2026-04-06 06:30:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.21049830317497253,
+      "confidence": 0.1683986335992813,
+      "current_price": 1.3214298486709595,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 06:30:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.21049830317497253,
+      "confidence": 0.1683986335992813,
+      "current_price": 1.3214298486709595,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -0.876351535320282,
+      "confidence": 0.876351535320282,
+      "current_price": 1.3246488571166992,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -0.876351535320282,
+      "confidence": 0.876351535320282,
+      "current_price": 1.3246488571166992,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -0.876349925994873,
+      "confidence": 0.876349925994873,
+      "current_price": 1.324594497680664,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -0.876349925994873,
+      "confidence": 0.876349925994873,
+      "current_price": 1.324594497680664,
+      "period": "60d"
+    }
+  ],
+  "GBPUSD=X_30m": [
+    {
+      "timestamp": "2026-04-06 06:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.9861774444580078,
+      "confidence": 1.0,
+      "current_price": 1.3214298486709595,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 06:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.9861774444580078,
+      "confidence": 1.0,
+      "current_price": 1.3214298486709595,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.3213176727294922,
+      "confidence": 1.0,
+      "current_price": 1.3246488571166992,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.3213176727294922,
+      "confidence": 1.0,
+      "current_price": 1.3248770236968994,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.3217370510101318,
+      "confidence": 1.0,
+      "current_price": 1.324594497680664,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "STRONG SELL",
+      "predicted_change_percent": -1.3217370510101318,
+      "confidence": 1.0,
+      "current_price": 1.324594497680664,
+      "period": "60d"
+    }
+  ],
+  "GBPUSD=X_1h": [
+    {
+      "timestamp": "2026-04-06 06:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.05186121538281441,
+      "confidence": 0.041488971561193466,
+      "current_price": 1.3214298486709595,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 06:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.05186121538281441,
+      "confidence": 0.041488971561193466,
+      "current_price": 1.3212692737579346,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.05186121538281441,
+      "confidence": 0.041488971561193466,
+      "current_price": 1.3246488571166992,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.05186121538281441,
+      "confidence": 0.041488971561193466,
+      "current_price": 1.3248770236968994,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.05186121538281441,
+      "confidence": 0.041488971561193466,
+      "current_price": 1.324594497680664,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.05186121538281441,
+      "confidence": 0.041488971561193466,
+      "current_price": 1.3244717121124268,
+      "period": "3mo"
+    }
+  ],
+  "GBPUSD=X_4h": [
+    {
+      "timestamp": "2026-04-06 03:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.23497997224330902,
+      "confidence": 0.18798397481441498,
+      "current_price": 1.3214298486709595,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 03:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.23497997224330902,
+      "confidence": 0.18798397481441498,
+      "current_price": 1.3212692737579346,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 07:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.22726303339004517,
+      "confidence": 0.1818104237318039,
+      "current_price": 1.3246488571166992,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 07:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.22726303339004517,
+      "confidence": 0.1818104237318039,
+      "current_price": 1.3248770236968994,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 07:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.22626224160194397,
+      "confidence": 0.18100978434085846,
+      "current_price": 1.324594497680664,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 07:00:00+00:00",
+      "signal": "BUY",
+      "predicted_change_percent": 0.22626224160194397,
+      "confidence": 0.18100978434085846,
+      "current_price": 1.3244717121124268,
+      "period": "6mo"
+    }
+  ],
+  "BTC-USD_15m": [
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.22035329043865204,
+      "confidence": 0.17628264427185059,
+      "current_price": 69738.796875,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.22035329043865204,
+      "confidence": 0.17628264427185059,
+      "current_price": 69743.0078125,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.2229054868221283,
+      "confidence": 0.1783244013786316,
+      "current_price": 69730.765625,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:45:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.2229054868221283,
+      "confidence": 0.1783244013786316,
+      "current_price": 69730.765625,
+      "period": "60d"
+    }
+  ],
+  "BTC-USD_30m": [
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.4602595269680023,
+      "confidence": 0.3682076334953308,
+      "current_price": 69738.796875,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.4602595269680023,
+      "confidence": 0.3682076334953308,
+      "current_price": 69743.0078125,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.4602595269680023,
+      "confidence": 0.3682076334953308,
+      "current_price": 69730.765625,
+      "period": "60d"
+    },
+    {
+      "timestamp": "2026-04-06 10:30:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.4602595269680023,
+      "confidence": 0.3682076334953308,
+      "current_price": 69730.765625,
+      "period": "60d"
+    }
+  ],
+  "BTC-USD_1h": [
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.07653598487377167,
+      "confidence": 0.06122878938913345,
+      "current_price": 69738.796875,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.07653598487377167,
+      "confidence": 0.06122878938913345,
+      "current_price": 69743.0078125,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.07653598487377167,
+      "confidence": 0.06122878938913345,
+      "current_price": 69730.765625,
+      "period": "3mo"
+    },
+    {
+      "timestamp": "2026-04-06 10:00:00+00:00",
+      "signal": "SELL",
+      "predicted_change_percent": -0.07653598487377167,
+      "confidence": 0.06122878938913345,
+      "current_price": 69730.765625,
+      "period": "3mo"
+    }
+  ],
+  "BTC-USD_4h": [
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.025534851476550102,
+      "confidence": 0.0,
+      "current_price": 69743.0078125,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.025534851476550102,
+      "confidence": 0.0,
+      "current_price": 69743.0078125,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.022489648312330246,
+      "confidence": 0.0,
+      "current_price": 69730.765625,
+      "period": "6mo"
+    },
+    {
+      "timestamp": "2026-04-06 08:00:00+00:00",
+      "signal": "HOLD",
+      "predicted_change_percent": -0.022489648312330246,
+      "confidence": 0.0,
+      "current_price": 69730.765625,
+      "period": "6mo"
+    }
+  ]
+}

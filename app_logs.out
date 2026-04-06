@@ -1,0 +1,515 @@
+INFO:     Will watch for changes in these directories: ['/home/naynek/Desktop/Backup/FX/fusion_trade']
+INFO:     Uvicorn running on http://0.0.0.0:2001 (Press CTRL+C to quit)
+INFO:     Started reloader process [402731] using WatchFiles
+INFO:     Started server process [402733]
+INFO:     Waiting for application startup.
+2026-04-06 14:42:00,948 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 14:42:00,949 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 14:42:00,949 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:42:00,952 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 14:42:00,953 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:42:00,955 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 14:42:00,955 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:42:00,956 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 14:42:00,957 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:42:00,958 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 14:42:00,958 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:42:00,959 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 14:42:00,959 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:42:00,960 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     127.0.0.1:37824 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37824 - "GET /openapi.json HTTP/1.1" 200 OK
+2026-04-06 14:42:21,992 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 14:42:22,042 INFO sqlalchemy.engine.Engine SELECT users.id, users.email, users.hashed_password, users.full_name, users.is_active, users.is_verified, users.is_superuser, users.subscription_tier, users.hf_token, users.created_at, users.updated_at 
+FROM users 
+WHERE users.email = ?
+2026-04-06 14:42:22,042 INFO sqlalchemy.engine.Engine [generated in 0.00070s] ('rogendopeter@gmail.com',)
+INFO:     127.0.0.1:37832 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+2026-04-06 14:42:22,826 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-06 14:43:00,419 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 14:43:00,432 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-06 14:43:00,433 INFO sqlalchemy.engine.Engine [generated in 0.00098s] ('809232a6-3505-429f-812d-1864cc940255',)
+2026-04-06 14:43:09.809041: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/keras/src/export/tf2onnx_lib.py:8: FutureWarning: In the future `np.object` will be defined as the corresponding NumPy scalar.
+  if not hasattr(np, "object"):
+2026-04-06 14:43:25 - fx_predict - INFO - Fetching GC=F (15m) from Hugging Face...
+2026-04-06 14:43:26 - fx_predict - INFO - Loading LSTM model from cache: /home/naynek/.cache/huggingface/hub/models--rogendo--forex-lstm-models/snapshots/dd67f098c440e87e67ee5c11ee6069566c18e3ab/GC_F_15m_model.h5
+2026-04-06 14:43:26.893725: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+2026-04-06 14:43:27 - fx_predict - WARNING - Could not load scaler for GC=F (15m): 404 Client Error. (Request ID: Root=1-69d39c5f-260da2c43cdc49ba6e34dd9d;e0a1687c-f242-41b8-9bd0-ce64299ded1f)
+
+Entry Not Found for url: https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_15m_scaler.pkl.. A new scaler will be fitted.
+2026-04-06 14:43:30 - fx_predict - INFO - ✓ Using actual volume data for GC=F: avg=2191
+2026-04-06 14:43:30 - fx_predict - WARNING - No saved scaler found. Fitting a new scaler to the current data.
+2026-04-06 14:43:34 - fx_predict - INFO - Logged to CSV (Status: Pending)
+2026-04-06 14:43:34 - fx_predict - WARNING - Google Sheets credentials not found at service_account.json. Sheets logging disabled.
+2026-04-06 14:43:34 - fx_predict - WARNING - Google Sheets credentials not found at service_account.json. Sheets logging disabled.
+PatchTST inference failed for GC=F 15m: cannot import name 'sanitize_symbol' from 'config' (/home/naynek/Desktop/Backup/FX/FX/config.py)
+2026-04-06 14:43:35 - fx_predict - INFO - Fetching GC=F (30m) from Hugging Face...
+2026-04-06 14:43:36 - fx_predict - INFO - Loading LSTM model from cache: /home/naynek/.cache/huggingface/hub/models--rogendo--forex-lstm-models/snapshots/dd67f098c440e87e67ee5c11ee6069566c18e3ab/GC_F_30m_model.h5
+2026-04-06 14:43:37 - fx_predict - WARNING - Could not load scaler for GC=F (30m): 404 Client Error. (Request ID: Root=1-69d39c69-012b9b66076539f74bb4cf3b;6cf0e215-3e22-4a12-85bb-d99ebcbccc4e)
+
+Entry Not Found for url: https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_30m_scaler.pkl.. A new scaler will be fitted.
+2026-04-06 14:43:38 - fx_predict - INFO - ✓ Using actual volume data for GC=F: avg=4378
+2026-04-06 14:43:38 - fx_predict - WARNING - No saved scaler found. Fitting a new scaler to the current data.
+2026-04-06 14:43:41 - fx_predict - INFO - Logged to CSV (Status: Ignored)
+2026-04-06 14:43:41 - fx_predict - WARNING - Google Sheets credentials not found at service_account.json. Sheets logging disabled.
+2026-04-06 14:43:41 - fx_predict - WARNING - Google Sheets credentials not found at service_account.json. Sheets logging disabled.
+PatchTST inference failed for GC=F 30m: cannot import name 'sanitize_symbol' from 'config' (/home/naynek/Desktop/Backup/FX/FX/config.py)
+2026-04-06 14:43:41 - fx_predict - INFO - Fetching GC=F (1h) from Hugging Face...
+2026-04-06 14:43:42 - fx_predict - INFO - Loading LSTM model from cache: /home/naynek/.cache/huggingface/hub/models--rogendo--forex-lstm-models/snapshots/dd67f098c440e87e67ee5c11ee6069566c18e3ab/GC_F_1h_model.h5
+2026-04-06 14:43:43 - fx_predict - WARNING - Could not load scaler for GC=F (1h): 404 Client Error. (Request ID: Root=1-69d39c6f-21a7d0bb631ada716d3d4241;1cc4ff61-9230-47dc-98af-3a105b2fd6fd)
+
+Entry Not Found for url: https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_1h_scaler.pkl.. A new scaler will be fitted.
+2026-04-06 14:43:44 - fx_predict - INFO - Found 51 zero volume candles for GC=F, filling with tick volume
+2026-04-06 14:43:44 - fx_predict - INFO - ✓ Filled 51 zero volume candles for GC=F
+2026-04-06 14:43:44 - fx_predict - INFO - ✓ Using actual volume data for GC=F: avg=9488
+2026-04-06 14:43:44 - fx_predict - WARNING - No saved scaler found. Fitting a new scaler to the current data.
+2026-04-06 14:43:47 - fx_predict - INFO - Logged to CSV (Status: Ignored)
+2026-04-06 14:43:47 - fx_predict - WARNING - Google Sheets credentials not found at service_account.json. Sheets logging disabled.
+2026-04-06 14:43:47 - fx_predict - WARNING - Google Sheets credentials not found at service_account.json. Sheets logging disabled.
+PatchTST inference failed for GC=F 1h: cannot import name 'sanitize_symbol' from 'config' (/home/naynek/Desktop/Backup/FX/FX/config.py)
+2026-04-06 14:43:47 - fx_predict - INFO - Fetching GC=F (4h) from Hugging Face...
+2026-04-06 14:43:48 - fx_predict - INFO - Loading LSTM model from cache: /home/naynek/.cache/huggingface/hub/models--rogendo--forex-lstm-models/snapshots/dd67f098c440e87e67ee5c11ee6069566c18e3ab/GC_F_4h_model.h5
+2026-04-06 14:43:49 - fx_predict - WARNING - Could not load scaler for GC=F (4h): 404 Client Error. (Request ID: Root=1-69d39c75-7b06959b1d2cdecb18b1158e;099938e1-daf8-4b96-877a-1a62519f3b61)
+
+Entry Not Found for url: https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_4h_scaler.pkl.. A new scaler will be fitted.
+2026-04-06 14:43:50 - fx_predict - INFO - Found 3 zero volume candles for GC=F, filling with tick volume
+2026-04-06 14:43:50 - fx_predict - INFO - ✓ Filled 3 zero volume candles for GC=F
+2026-04-06 14:43:50 - fx_predict - INFO - ✓ Using actual volume data for GC=F: avg=37348
+2026-04-06 14:43:50 - fx_predict - WARNING - No saved scaler found. Fitting a new scaler to the current data.
+2026-04-06 14:43:52 - fx_predict - INFO - Logged to CSV (Status: Pending)
+2026-04-06 14:43:52 - fx_predict - WARNING - Google Sheets credentials not found at service_account.json. Sheets logging disabled.
+2026-04-06 14:43:52 - fx_predict - WARNING - Google Sheets credentials not found at service_account.json. Sheets logging disabled.
+PatchTST inference failed for GC=F 4h: cannot import name 'sanitize_symbol' from 'config' (/home/naynek/Desktop/Backup/FX/FX/config.py)
+2026-04-06 14:43:52 - fx_predict - INFO - Fetching fresh news from all feeds...
+2026-04-06 14:43:53 - fx_predict - INFO - Fetched 20 articles from ForexLive
+2026-04-06 14:43:55 - fx_predict - INFO - Fetched 20 articles from FXStreet
+2026-04-06 14:43:57 - fx_predict - INFO - Fetched 0 articles from DailyFX
+2026-04-06 14:43:58 - fx_predict - INFO - Fetched 10 articles from Investing
+2026-04-06 14:43:58 - fx_predict - INFO - Total news articles fetched: 50
+2026-04-06 14:43:58 - fx_predict - INFO - Found 19 news items for GC=F
+2026-04-06 14:43:58,636 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-06 14:43:58,637 INFO sqlalchemy.engine.Engine [generated in 0.00109s] ('GC=F', '2026-04-06 11:43:58.625388')
+2026-04-06 14:43:58 - fx_predict - INFO - Returning cached news
+2026-04-06 14:43:58 - fx_predict - INFO - Found 19 news items for GC=F
+2026-04-06 14:44:07 - fx_predict - INFO - Loading FinBERT model: yiyanghkust/finbert-tone...
+Device set to use cpu
+2026-04-06 14:44:11 - fx_predict - INFO - Model yiyanghkust/finbert-tone loaded successfully
+2026-04-06 14:44:11 - fx_predict - INFO - Loading FinBERT model: yiyanghkust/finbert-fls...
+Device set to use cpu
+2026-04-06 14:44:15 - fx_predict - INFO - Model yiyanghkust/finbert-fls loaded successfully
+2026-04-06 14:44:21,496 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ?
+2026-04-06 14:44:21,497 INFO sqlalchemy.engine.Engine [generated in 0.00038s] ('GC=F',)
+2026-04-06 14:44:21,505 INFO sqlalchemy.engine.Engine INSERT INTO news_cache (symbol, overall_sentiment, overall_score, trading_bias, bias_strength, positive_count, negative_count, neutral_count, news_count, cache_expires_at, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-06 14:44:21,506 INFO sqlalchemy.engine.Engine [generated in 0.00144s] ('GC=F', 'bearish', -0.2471433639526367, 'SELL', 'moderate', 2, 5, 3, 10, '2026-04-06 12:44:21.498372', '2026-04-06 11:44:21.498618')
+2026-04-06 14:44:21,686 INFO sqlalchemy.engine.Engine DELETE FROM news_cache WHERE news_cache.id = ?
+2026-04-06 14:44:21,686 INFO sqlalchemy.engine.Engine [generated in 0.00037s] (6,)
+2026-04-06 14:44:21,687 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-06 14:44:21,708 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 14:44:21,711 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-06 14:44:21,712 INFO sqlalchemy.engine.Engine [cached since 23.08s ago] ('GC=F', '2026-04-06 11:44:21.706328')
+INFO:     127.0.0.1:42214 - "GET /api/v1/fusion/GC%3DF?include_sentiment=true&include_llm=false HTTP/1.1" 200 OK
+2026-04-06 14:44:21,719 INFO sqlalchemy.engine.Engine ROLLBACK
+WARNING:  WatchFiles detected changes in 'intelligence/patchtst_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [402733]
+INFO:     Started server process [403236]
+INFO:     Waiting for application startup.
+2026-04-06 14:47:29,424 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 14:47:29,424 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 14:47:29,425 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:29,428 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 14:47:29,429 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:29,430 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 14:47:29,430 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:29,432 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 14:47:29,432 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:29,433 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 14:47:29,433 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:29,434 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 14:47:29,434 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:29,435 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/patchtst_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [403236]
+INFO:     Started server process [403290]
+INFO:     Waiting for application startup.
+2026-04-06 14:47:52,777 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 14:47:52,778 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 14:47:52,778 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:52,779 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 14:47:52,780 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:52,780 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 14:47:52,781 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:52,781 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 14:47:52,781 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:52,782 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 14:47:52,782 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:52,783 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 14:47:52,783 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 14:47:52,783 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/vendors/__init__.py', 'intelligence/patchtst/data/__init__.py', 'intelligence/patchtst/models/__init__.py', 'intelligence/patchtst/__init__.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [403290]
+WARNING:  WatchFiles detected changes in 'intelligence/vendors/news_service.py'. Reloading...
+INFO:     Started server process [404365]
+INFO:     Waiting for application startup.
+2026-04-06 15:00:48,824 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:00:48,825 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:00:48,825 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:00:48,828 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:00:48,829 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:00:48,830 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:00:48,831 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:00:48,832 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:00:48,832 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:00:48,833 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:00:48,834 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:00:48,835 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:00:48,835 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:00:48,836 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/vendors/sentiment_analyzer.py'. Reloading...
+INFO:     Started server process [404427]
+INFO:     Waiting for application startup.
+2026-04-06 15:01:03,036 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:01:03,037 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:01:03,038 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:03,041 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:01:03,042 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:03,043 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:01:03,043 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:03,044 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:01:03,044 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:03,045 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:01:03,045 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:03,046 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:01:03,046 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:03,048 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/patchtst/config.py'. Reloading...
+WARNING:  WatchFiles detected changes in 'intelligence/patchtst/models/heads.py'. Reloading...
+INFO:     Started server process [404493]
+INFO:     Waiting for application startup.
+2026-04-06 15:01:14,884 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:01:14,885 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:01:14,885 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:14,888 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:01:14,888 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:14,889 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:01:14,890 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:14,891 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:01:14,891 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:14,892 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:01:14,892 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:14,893 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:01:14,893 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:14,894 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     Started server process [404532]
+INFO:     Waiting for application startup.
+2026-04-06 15:01:27,839 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:01:27,840 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:01:27,840 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:27,843 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:01:27,843 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:27,844 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:01:27,845 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:27,845 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:01:27,846 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:27,846 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:01:27,847 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:27,847 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:01:27,848 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:27,848 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/patchtst/models/patchtst.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [404532]
+INFO:     Started server process [404550]
+INFO:     Waiting for application startup.
+2026-04-06 15:01:43,642 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:01:43,643 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:01:43,644 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:43,649 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:01:43,650 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:43,651 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:01:43,652 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:43,653 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:01:43,654 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:43,655 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:01:43,656 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:43,657 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:01:43,657 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:01:43,659 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/patchtst/data/fetcher.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [404550]
+INFO:     Started server process [404596]
+INFO:     Waiting for application startup.
+2026-04-06 15:02:14,167 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:02:14,168 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:02:14,168 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:14,171 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:02:14,171 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:14,172 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:02:14,172 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:14,173 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:02:14,173 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:14,174 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:02:14,174 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:14,175 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:02:14,175 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:14,176 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/patchtst/data/features.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [404596]
+WARNING:  WatchFiles detected changes in 'intelligence/patchtst/data/preprocessor.py'. Reloading...
+INFO:     Started server process [404617]
+INFO:     Waiting for application startup.
+2026-04-06 15:02:38,547 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:02:38,547 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:02:38,548 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:38,551 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:02:38,551 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:38,553 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:02:38,553 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:38,554 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:02:38,554 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:38,555 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:02:38,555 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:38,556 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:02:38,557 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:38,558 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     Started server process [404631]
+INFO:     Waiting for application startup.
+2026-04-06 15:02:51,865 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:02:51,866 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:02:51,866 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:51,868 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:02:51,869 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:51,870 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:02:51,870 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:51,872 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:02:51,872 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:51,873 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:02:51,873 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:51,875 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:02:51,876 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:02:51,878 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/vendors/lstm_engine.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [404631]
+INFO:     Started server process [404689]
+INFO:     Waiting for application startup.
+2026-04-06 15:03:58,463 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:03:58,464 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:03:58,464 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:03:58,468 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:03:58,469 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:03:58,472 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:03:58,472 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:03:58,475 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:03:58,476 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:03:58,477 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:03:58,478 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:03:58,479 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:03:58,480 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:03:58,482 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/lstm_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [404689]
+INFO:     Started server process [404844]
+INFO:     Waiting for application startup.
+2026-04-06 15:06:47,853 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:06:47,854 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:06:47,854 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:06:47,856 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:06:47,857 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:06:47,858 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:06:47,858 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:06:47,859 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:06:47,860 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:06:47,860 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:06:47,861 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:06:47,861 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:06:47,862 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:06:47,863 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/patchtst_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [404844]
+WARNING:  WatchFiles detected changes in 'intelligence/news_service.py'. Reloading...
+INFO:     Started server process [404883]
+INFO:     Waiting for application startup.
+2026-04-06 15:07:10,064 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:07:10,065 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:07:10,065 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:10,068 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:07:10,069 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:10,070 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:07:10,070 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:10,071 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:07:10,072 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:10,072 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:07:10,073 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:10,073 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:07:10,074 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:10,075 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'intelligence/sentiment_service.py'. Reloading...
+INFO:     Started server process [404906]
+INFO:     Waiting for application startup.
+2026-04-06 15:07:22,585 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-06 15:07:22,585 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-06 15:07:22,586 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:22,589 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-06 15:07:22,590 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:22,591 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-06 15:07:22,591 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:22,593 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-06 15:07:22,593 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:22,594 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-06 15:07:22,594 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:22,595 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-06 15:07:22,596 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-06 15:07:22,597 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/config.py'. Reloading...
+WARNING:  WatchFiles detected changes in 'app/main.py'. Reloading...
+Process SpawnProcess-18:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/naynek/Desktop/Backup/FX/fusion_trade/app/main.py", line 24, in <module>
+  File "/home/naynek/Desktop/Backup/FX/fusion_trade/app/config.py", line 71, in <module>
+    settings = Settings()
+               ^^^^^^^^^^
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/pydantic_settings/main.py", line 194, in __init__
+    super().__init__(
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Settings
+fx_project_path
+  Extra inputs are not permitted [type=extra_forbidden, input_value='/home/naynek/Desktop/Backup/FX/FX', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden
+Process SpawnProcess-19:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/naynek/Desktop/Backup/FX/fusion_trade/app/main.py", line 13, in <module>
+    from app.config import settings
+  File "/home/naynek/Desktop/Backup/FX/fusion_trade/app/config.py", line 71, in <module>
+    settings = Settings()
+               ^^^^^^^^^^
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/pydantic_settings/main.py", line 194, in __init__
+    super().__init__(
+  File "/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Settings
+fx_project_path
+  Extra inputs are not permitted [type=extra_forbidden, input_value='/home/naynek/Desktop/Backup/FX/FX', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden
