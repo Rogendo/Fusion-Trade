@@ -1,0 +1,368 @@
+INFO:     Started server process [11901]
+INFO:     Waiting for application startup.
+2026-04-11 20:06:12,810 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-11 20:06:12,810 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-04-11 20:06:12,810 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-11 20:06:12,812 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("prediction_journal")
+2026-04-11 20:06:12,813 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-11 20:06:12,813 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("model_registry")
+2026-04-11 20:06:12,814 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-11 20:06:12,814 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("email_verifications")
+2026-04-11 20:06:12,814 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-11 20:06:12,815 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("password_resets")
+2026-04-11 20:06:12,815 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-11 20:06:12,815 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("news_cache")
+2026-04-11 20:06:12,815 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-11 20:06:12,816 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:2001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:32930 - "POST /api/v1/auth/refresh HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:32936 - "POST /api/v1/auth/refresh HTTP/1.1" 422 Unprocessable Entity
+2026-04-11 20:08:12,976 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-11 20:08:13,025 INFO sqlalchemy.engine.Engine SELECT users.id, users.email, users.hashed_password, users.full_name, users.is_active, users.is_verified, users.is_superuser, users.subscription_tier, users.hf_token, users.created_at, users.updated_at 
+FROM users 
+WHERE users.email = ?
+2026-04-11 20:08:13,026 INFO sqlalchemy.engine.Engine [generated in 0.00083s] ('devtest@fusiontrade.ai',)
+INFO:     127.0.0.1:40714 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+2026-04-11 20:08:13,979 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-11 20:08:14,014 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-11 20:08:14,023 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-11 20:08:14,023 INFO sqlalchemy.engine.Engine [generated in 0.00054s] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+INFO:     127.0.0.1:40716 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+2026-04-11 20:08:14,034 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-11 20:08:14,373 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-11 20:08:14,374 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-11 20:08:14,375 INFO sqlalchemy.engine.Engine [cached since 0.3522s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-11 20:08:26.718741: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/naynek/Desktop/Backup/FX/FX/venv/lib/python3.12/site-packages/keras/src/export/tf2onnx_lib.py:8: FutureWarning: In the future `np.object` will be defined as the corresponding NumPy scalar.
+  if not hasattr(np, "object"):
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /Rogendo/forex-lstm-models/resolve/main/GC_F_15m_model.h5 (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -3] Temporary failure in name resolution)"))'), '(Request ID: 8b08148b-3122-4ef5-b1f7-899165ad988f)')' thrown while requesting HEAD https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_15m_model.h5
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /Rogendo/forex-lstm-models/resolve/main/GC_F_15m_model.h5 (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -3] Temporary failure in name resolution)"))'), '(Request ID: a83164e9-e9e3-4fd7-be7f-57686e60d01a)')' thrown while requesting HEAD https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_15m_model.h5
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /Rogendo/forex-lstm-models/resolve/main/GC_F_15m_model.h5 (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -3] Temporary failure in name resolution)"))'), '(Request ID: 9fc62a67-c15a-4c15-b531-92eeefb2df03)')' thrown while requesting HEAD https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_15m_model.h5
+Retrying in 4s [Retry 3/5].
+2026-04-11 20:10:01.632795: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Could not load scaler for GC=F (15m): 404 Client Error. (Request ID: Root=1-69da806a-0cfcd8917041f28a3c90dfd4;70c1465e-9863-4dfa-b37f-a0bd6e0124b8)
+
+Entry Not Found for url: https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_15m_scaler.pkl.. Will fit fresh.
+Could not load scaler for GC=F (30m): 404 Client Error. (Request ID: Root=1-69da8084-154dd5230c7e73dd5e7c6eb8;9260d68c-834f-4200-9ca5-8367a77236f0)
+
+Entry Not Found for url: https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_30m_scaler.pkl.. Will fit fresh.
+Could not load scaler for GC=F (1h): 404 Client Error. (Request ID: Root=1-69da808d-745035542d6cec157538135f;fc2fe270-3520-481a-aa57-46abd0be3644)
+
+Entry Not Found for url: https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_1h_scaler.pkl.. Will fit fresh.
+Could not load scaler for GC=F (4h): 404 Client Error. (Request ID: Root=1-69da8094-196f5328532f1278731c6069;a96a19ad-516e-406a-9dda-57949961c73b)
+
+Entry Not Found for url: https://huggingface.co/Rogendo/forex-lstm-models/resolve/main/GC_F_4h_scaler.pkl.. Will fit fresh.
+2026-04-11 20:10:54,339 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-11 20:10:54,340 INFO sqlalchemy.engine.Engine [generated in 0.00165s] ('GC=F', '2026-04-11 17:10:54.315309')
+Device set to use cpu
+Device set to use cpu
+2026-04-11 20:11:36,267 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ?
+2026-04-11 20:11:36,271 INFO sqlalchemy.engine.Engine [generated in 0.01548s] ('GC=F',)
+2026-04-11 20:11:36,343 INFO sqlalchemy.engine.Engine INSERT INTO news_cache (symbol, overall_sentiment, overall_score, trading_bias, bias_strength, positive_count, negative_count, neutral_count, news_count, cache_expires_at, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-11 20:11:36,344 INFO sqlalchemy.engine.Engine [generated in 0.00222s] ('GC=F', 'neutral', -0.09165204763412477, 'NEUTRAL', 'none', 3, 4, 3, 10, '2026-04-11 18:11:36.308544', '2026-04-11 17:11:36.312927')
+2026-04-11 20:11:36,387 INFO sqlalchemy.engine.Engine DELETE FROM news_cache WHERE news_cache.id = ?
+2026-04-11 20:11:36,391 INFO sqlalchemy.engine.Engine [generated in 0.00395s] (29,)
+2026-04-11 20:11:36,402 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-11 20:11:36,476 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-11 20:11:36,477 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-11 20:11:36,477 INFO sqlalchemy.engine.Engine [cached since 42.14s ago] ('GC=F', '2026-04-11 17:11:36.466181')
+2026-04-11 20:11:36,544 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-11 20:11:36,544 INFO sqlalchemy.engine.Engine [generated in 0.00060s] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-11 20:11:36,574 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-11 20:11:36,574 INFO sqlalchemy.engine.Engine [generated in 0.00102s] ('b782704d-7930-4e53-949d-ee4b884c0315', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4771.0, 4767.846234051569, 4944.5813125, None, None, 4655.279125, 0.0, 'PENDING', None, None, None, '2026-04-11 17:11:36.547143', None)
+2026-04-11 20:11:36,584 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-11 20:11:36,604 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-11 20:11:36,611 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-11 20:11:36,611 INFO sqlalchemy.engine.Engine [generated in 0.00076s] ('b782704d-7930-4e53-949d-ee4b884c0315',)
+INFO:     127.0.0.1:40718 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-11 20:11:36,715 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-11 20:11:36,729 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-11 20:11:36,730 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-11 20:11:36,730 INFO sqlalchemy.engine.Engine [cached since 202.7s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-11 20:11:36,789 INFO sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM (SELECT prediction_journal.id AS id, prediction_journal.user_id AS user_id, prediction_journal.symbol AS symbol, prediction_journal.interval AS interval, prediction_journal.signal AS signal, prediction_journal.lstm_signal AS lstm_signal, prediction_journal.patchtst_signal AS patchtst_signal, prediction_journal.fusion_score AS fusion_score, prediction_journal.entry_price AS entry_price, prediction_journal.predicted_price AS predicted_price, prediction_journal.take_profit_1 AS take_profit_1, prediction_journal.take_profit_2 AS take_profit_2, prediction_journal.take_profit_3 AS take_profit_3, prediction_journal.stop_loss AS stop_loss, prediction_journal.confidence AS confidence, prediction_journal.status AS status, prediction_journal.outcome AS outcome, prediction_journal.exit_price AS exit_price, prediction_journal.pips AS pips, prediction_journal.created_at AS created_at, prediction_journal.verified_at AS verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.user_id = ?) AS anon_1
+2026-04-11 20:11:36,790 INFO sqlalchemy.engine.Engine [generated in 0.00068s] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-11 20:11:36,796 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.user_id = ? ORDER BY prediction_journal.created_at DESC
+ LIMIT ? OFFSET ?
+2026-04-11 20:11:36,796 INFO sqlalchemy.engine.Engine [generated in 0.00055s] ('9c403c39-30a4-4a54-847c-3b35393af3e7', 20, 0)
+2026-04-11 20:11:36,802 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.user_id = ?
+2026-04-11 20:11:36,802 INFO sqlalchemy.engine.Engine [generated in 0.00051s] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+INFO:     127.0.0.1:53848 - "GET /api/v1/journal/?page=1&page_size=20 HTTP/1.1" 200 OK
+2026-04-11 20:11:36,811 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-11 20:16:20,458 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-11 20:16:20,459 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-11 20:16:20,460 INFO sqlalchemy.engine.Engine [cached since 486.4s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-11 20:16:57,690 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-11 20:16:57,693 INFO sqlalchemy.engine.Engine [cached since 363.4s ago] ('GC=F', '2026-04-11 17:16:57.686466')
+2026-04-11 20:16:57,700 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-11 20:16:57,703 INFO sqlalchemy.engine.Engine [cached since 321.1s ago] ('9039f793-b87a-4f50-a4bb-183e7b18aa3e', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4771.0, 4767.846234051569, 4944.5813125, None, None, 4655.279125, 0.0, 'PENDING', None, None, None, '2026-04-11 17:16:57.695371', None)
+2026-04-11 20:16:57,707 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-11 20:16:57,760 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-11 20:16:57,766 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-11 20:16:57,767 INFO sqlalchemy.engine.Engine [cached since 321.2s ago] ('9039f793-b87a-4f50-a4bb-183e7b18aa3e',)
+INFO:     127.0.0.1:37650 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-11 20:16:57,789 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:53374 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:41314 - "POST /api/v1/auth/refresh HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:41320 - "POST /api/v1/auth/refresh HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:41318 - "POST /api/v1/auth/refresh HTTP/1.1" 422 Unprocessable Entity
+2026-04-12 09:25:36,840 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:25:36,894 INFO sqlalchemy.engine.Engine SELECT users.id, users.email, users.hashed_password, users.full_name, users.is_active, users.is_verified, users.is_superuser, users.subscription_tier, users.hf_token, users.created_at, users.updated_at 
+FROM users 
+WHERE users.email = ?
+2026-04-12 09:25:36,900 INFO sqlalchemy.engine.Engine [cached since 4.784e+04s ago] ('devtest@fusiontrade.ai',)
+INFO:     127.0.0.1:50426 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+2026-04-12 09:25:37,515 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:25:37,566 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:25:37,575 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:25:37,576 INFO sqlalchemy.engine.Engine [cached since 4.784e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+INFO:     127.0.0.1:50434 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+2026-04-12 09:25:37,831 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:25:37,984 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:25:37,986 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:25:37,986 INFO sqlalchemy.engine.Engine [cached since 4.784e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:26:07,172 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:26:07,172 INFO sqlalchemy.engine.Engine [cached since 4.771e+04s ago] ('GC=F', '2026-04-12 06:26:07.139766')
+2026-04-12 09:26:20,733 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ?
+2026-04-12 09:26:20,735 INFO sqlalchemy.engine.Engine [cached since 4.768e+04s ago] ('GC=F',)
+2026-04-12 09:26:20,853 INFO sqlalchemy.engine.Engine INSERT INTO news_cache (symbol, overall_sentiment, overall_score, trading_bias, bias_strength, positive_count, negative_count, neutral_count, news_count, cache_expires_at, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:26:20,853 INFO sqlalchemy.engine.Engine [cached since 4.768e+04s ago] ('GC=F', 'neutral', -0.09165204763412477, 'NEUTRAL', 'none', 3, 4, 3, 10, '2026-04-12 07:26:20.755969', '2026-04-12 06:26:20.778247')
+2026-04-12 09:26:20,876 INFO sqlalchemy.engine.Engine DELETE FROM news_cache WHERE news_cache.id = ?
+2026-04-12 09:26:20,876 INFO sqlalchemy.engine.Engine [cached since 4.768e+04s ago] (30,)
+2026-04-12 09:26:20,882 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:26:20,911 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:26:20,912 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:26:20,913 INFO sqlalchemy.engine.Engine [cached since 4.773e+04s ago] ('GC=F', '2026-04-12 06:26:20.907212')
+2026-04-12 09:26:20,955 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:26:20,955 INFO sqlalchemy.engine.Engine [cached since 4.768e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:26:20,971 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:26:20,972 INFO sqlalchemy.engine.Engine [cached since 4.768e+04s ago] ('3fddb937-8575-4cc1-9dad-0b468888caa8', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4787.39990234375, 4767.851919381239, 4961.99900234375, None, None, 4671.00050234375, 0.0, 'PENDING', None, None, None, '2026-04-12 06:26:20.956513', None)
+2026-04-12 09:26:20,980 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:26:21,002 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:26:21,004 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-12 09:26:21,004 INFO sqlalchemy.engine.Engine [cached since 4.768e+04s ago] ('3fddb937-8575-4cc1-9dad-0b468888caa8',)
+INFO:     127.0.0.1:50438 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-12 09:26:21,054 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:29:21,431 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:29:21,431 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:29:21,431 INFO sqlalchemy.engine.Engine [cached since 4.807e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:29:29,480 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:29:29,480 INFO sqlalchemy.engine.Engine [cached since 4.792e+04s ago] ('GC=F', '2026-04-12 06:29:29.480067')
+2026-04-12 09:29:29,482 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:29:29,482 INFO sqlalchemy.engine.Engine [cached since 4.787e+04s ago] ('840e7050-e4a2-48fb-8e7c-f42e8351a0a5', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4787.39990234375, 4767.851919381239, 4961.99900234375, None, None, 4671.00050234375, 0.0, 'PENDING', None, None, None, '2026-04-12 06:29:29.481892', None)
+2026-04-12 09:29:29,483 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:29:29,537 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:29:29,538 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-12 09:29:29,538 INFO sqlalchemy.engine.Engine [cached since 4.787e+04s ago] ('840e7050-e4a2-48fb-8e7c-f42e8351a0a5',)
+INFO:     127.0.0.1:48256 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-12 09:29:29,539 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:32:29,579 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:32:29,581 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:32:29,581 INFO sqlalchemy.engine.Engine [cached since 4.826e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:32:37,490 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:32:37,490 INFO sqlalchemy.engine.Engine [cached since 4.81e+04s ago] ('GC=F', '2026-04-12 06:32:37.489182')
+2026-04-12 09:32:37,492 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:32:37,492 INFO sqlalchemy.engine.Engine [cached since 4.806e+04s ago] ('453c6abd-1522-4afa-a154-4e2dcc520a1f', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4787.39990234375, 4767.851919381239, 4961.99900234375, None, None, 4671.00050234375, 0.0, 'PENDING', None, None, None, '2026-04-12 06:32:37.491315', None)
+2026-04-12 09:32:37,492 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:32:37,510 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:32:37,510 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-12 09:32:37,510 INFO sqlalchemy.engine.Engine [cached since 4.806e+04s ago] ('453c6abd-1522-4afa-a154-4e2dcc520a1f',)
+INFO:     127.0.0.1:53972 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-12 09:32:37,512 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:35:37,541 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:35:37,542 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:35:37,543 INFO sqlalchemy.engine.Engine [cached since 4.844e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:35:44,013 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:35:44,013 INFO sqlalchemy.engine.Engine [cached since 4.829e+04s ago] ('GC=F', '2026-04-12 06:35:44.012243')
+2026-04-12 09:35:44,014 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:35:44,014 INFO sqlalchemy.engine.Engine [cached since 4.825e+04s ago] ('0edc5233-ecba-4bf5-a272-57a5fc57b061', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4787.39990234375, 4767.851919381239, 4961.99900234375, None, None, 4671.00050234375, 0.0, 'PENDING', None, None, None, '2026-04-12 06:35:44.014090', None)
+2026-04-12 09:35:44,015 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:35:44,032 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:35:44,032 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-12 09:35:44,032 INFO sqlalchemy.engine.Engine [cached since 4.825e+04s ago] ('0edc5233-ecba-4bf5-a272-57a5fc57b061',)
+INFO:     127.0.0.1:41528 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-12 09:35:44,034 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:38:44,062 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:38:44,063 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:38:44,063 INFO sqlalchemy.engine.Engine [cached since 4.863e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:38:50,193 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:38:50,193 INFO sqlalchemy.engine.Engine [cached since 4.848e+04s ago] ('GC=F', '2026-04-12 06:38:50.192922')
+2026-04-12 09:38:50,195 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:38:50,195 INFO sqlalchemy.engine.Engine [cached since 4.843e+04s ago] ('9408460c-e5c1-444a-9c30-bebe8728af3e', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4787.39990234375, 4767.851919381239, 4961.99900234375, None, None, 4671.00050234375, 0.0, 'PENDING', None, None, None, '2026-04-12 06:38:50.194842', None)
+2026-04-12 09:38:50,197 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:38:50,223 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:38:50,223 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-12 09:38:50,224 INFO sqlalchemy.engine.Engine [cached since 4.843e+04s ago] ('9408460c-e5c1-444a-9c30-bebe8728af3e',)
+INFO:     127.0.0.1:46190 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-12 09:38:50,225 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:41:50,315 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:41:50,316 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:41:50,316 INFO sqlalchemy.engine.Engine [cached since 4.882e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:42:08,125 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:42:08,125 INFO sqlalchemy.engine.Engine [cached since 4.867e+04s ago] ('GC=F', '2026-04-12 06:42:08.122522')
+2026-04-12 09:42:08,130 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:42:08,130 INFO sqlalchemy.engine.Engine [cached since 4.863e+04s ago] ('b83dc9d5-4654-4c94-bc3d-13c9bfc9d848', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4787.39990234375, 4767.851919381239, 4961.99900234375, None, None, 4671.00050234375, 0.0, 'PENDING', None, None, None, '2026-04-12 06:42:08.127604', None)
+2026-04-12 09:42:08,131 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:42:08,174 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:42:08,175 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-12 09:42:08,175 INFO sqlalchemy.engine.Engine [cached since 4.863e+04s ago] ('b83dc9d5-4654-4c94-bc3d-13c9bfc9d848',)
+INFO:     127.0.0.1:35006 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-12 09:42:08,179 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:45:08,260 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:45:08,261 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:45:08,261 INFO sqlalchemy.engine.Engine [cached since 4.901e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:45:17,524 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:45:17,524 INFO sqlalchemy.engine.Engine [cached since 4.886e+04s ago] ('GC=F', '2026-04-12 06:45:17.523580')
+2026-04-12 09:45:17,525 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:45:17,525 INFO sqlalchemy.engine.Engine [cached since 4.882e+04s ago] ('76c6340d-2f42-4614-a85b-2d5d14238973', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4787.39990234375, 4767.851919381239, 4961.99900234375, None, None, 4671.00050234375, 0.0, 'PENDING', None, None, None, '2026-04-12 06:45:17.525037', None)
+2026-04-12 09:45:17,526 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:45:17,851 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:45:17,852 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-12 09:45:17,852 INFO sqlalchemy.engine.Engine [cached since 4.882e+04s ago] ('76c6340d-2f42-4614-a85b-2d5d14238973',)
+INFO:     127.0.0.1:42232 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-12 09:45:17,857 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:48:17,950 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:48:17,951 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:48:17,952 INFO sqlalchemy.engine.Engine [cached since 4.92e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:48:28,652 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:48:28,652 INFO sqlalchemy.engine.Engine [cached since 4.905e+04s ago] ('GC=F', '2026-04-12 06:48:28.651548')
+2026-04-12 09:48:28,653 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:48:28,653 INFO sqlalchemy.engine.Engine [cached since 4.901e+04s ago] ('f28c8e5d-b1b7-4c17-8cff-cd6e1efc24d5', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4787.39990234375, 4767.851919381239, 4961.99900234375, None, None, 4671.00050234375, 0.0, 'PENDING', None, None, None, '2026-04-12 06:48:28.652802', None)
+2026-04-12 09:48:28,653 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:48:28,746 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:48:28,747 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-12 09:48:28,747 INFO sqlalchemy.engine.Engine [cached since 4.901e+04s ago] ('f28c8e5d-b1b7-4c17-8cff-cd6e1efc24d5',)
+INFO:     127.0.0.1:54194 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-12 09:48:28,749 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:51:28,788 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:51:28,789 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:51:28,789 INFO sqlalchemy.engine.Engine [cached since 4.939e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:51:36,691 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:51:36,691 INFO sqlalchemy.engine.Engine [cached since 4.924e+04s ago] ('GC=F', '2026-04-12 06:51:36.690749')
+2026-04-12 09:51:36,692 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:51:36,692 INFO sqlalchemy.engine.Engine [cached since 4.92e+04s ago] ('0a56e7cc-d2d3-4e4b-9f16-f8477782f0c5', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4787.39990234375, 4767.851919381239, 4961.99900234375, None, None, 4671.00050234375, 0.0, 'PENDING', None, None, None, '2026-04-12 06:51:36.691985', None)
+2026-04-12 09:51:36,693 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:51:36,831 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:51:36,833 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-12 09:51:36,833 INFO sqlalchemy.engine.Engine [cached since 4.92e+04s ago] ('0a56e7cc-d2d3-4e4b-9f16-f8477782f0c5',)
+INFO:     127.0.0.1:58516 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-12 09:51:36,838 INFO sqlalchemy.engine.Engine ROLLBACK
+2026-04-12 09:54:37,105 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:54:37,107 INFO sqlalchemy.engine.Engine SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.is_superuser AS users_is_superuser, users.subscription_tier AS users_subscription_tier, users.hf_token AS users_hf_token, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.id = ?
+2026-04-12 09:54:37,107 INFO sqlalchemy.engine.Engine [cached since 4.958e+04s ago] ('9c403c39-30a4-4a54-847c-3b35393af3e7',)
+2026-04-12 09:54:45,580 INFO sqlalchemy.engine.Engine SELECT news_cache.id, news_cache.symbol, news_cache.overall_sentiment, news_cache.overall_score, news_cache.trading_bias, news_cache.bias_strength, news_cache.positive_count, news_cache.negative_count, news_cache.neutral_count, news_cache.news_count, news_cache.cache_expires_at, news_cache.created_at 
+FROM news_cache 
+WHERE news_cache.symbol = ? AND news_cache.cache_expires_at > ?
+2026-04-12 09:54:45,580 INFO sqlalchemy.engine.Engine [cached since 4.943e+04s ago] ('GC=F', '2026-04-12 06:54:45.579916')
+2026-04-12 09:54:45,581 INFO sqlalchemy.engine.Engine INSERT INTO prediction_journal (id, user_id, symbol, interval, signal, lstm_signal, patchtst_signal, fusion_score, entry_price, predicted_price, take_profit_1, take_profit_2, take_profit_3, stop_loss, confidence, status, outcome, exit_price, pips, created_at, verified_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-12 09:54:45,581 INFO sqlalchemy.engine.Engine [cached since 4.939e+04s ago] ('bb86a487-5a90-40c2-a3b7-1510c60a3e27', '9c403c39-30a4-4a54-847c-3b35393af3e7', 'GC=F', '30m', 'HOLD', 'HOLD', 'HOLD', 31.2, 4787.39990234375, 4767.851919381239, 4961.99900234375, None, None, 4671.00050234375, 0.0, 'PENDING', None, None, None, '2026-04-12 06:54:45.581179', None)
+2026-04-12 09:54:45,582 INFO sqlalchemy.engine.Engine COMMIT
+2026-04-12 09:54:45,728 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-12 09:54:45,728 INFO sqlalchemy.engine.Engine SELECT prediction_journal.id, prediction_journal.user_id, prediction_journal.symbol, prediction_journal.interval, prediction_journal.signal, prediction_journal.lstm_signal, prediction_journal.patchtst_signal, prediction_journal.fusion_score, prediction_journal.entry_price, prediction_journal.predicted_price, prediction_journal.take_profit_1, prediction_journal.take_profit_2, prediction_journal.take_profit_3, prediction_journal.stop_loss, prediction_journal.confidence, prediction_journal.status, prediction_journal.outcome, prediction_journal.exit_price, prediction_journal.pips, prediction_journal.created_at, prediction_journal.verified_at 
+FROM prediction_journal 
+WHERE prediction_journal.id = ?
+2026-04-12 09:54:45,729 INFO sqlalchemy.engine.Engine [cached since 4.939e+04s ago] ('bb86a487-5a90-40c2-a3b7-1510c60a3e27',)
+INFO:     127.0.0.1:46678 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 200 OK
+2026-04-12 09:54:45,730 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:46722 - "GET /api/v1/fusion/GC%3DF HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:46734 - "POST /api/v1/auth/refresh HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:46742 - "POST /api/v1/auth/refresh HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:46750 - "POST /api/v1/auth/refresh HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:46292 - "POST /api/v1/auth/refresh HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:46278 - "POST /api/v1/auth/refresh HTTP/1.1" 422 Unprocessable Entity

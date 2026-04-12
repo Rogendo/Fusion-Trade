@@ -67,13 +67,14 @@ def get_lstm_signal(symbol: str, interval: str) -> Optional[SignalResult]:
     """
     try:
         from intelligence.vendors.lstm_engine import get_lstm_engine
+        from intelligence.runtime_config import get_lstm_cfg
 
         engine = get_lstm_engine()
 
-        period_map = {
+        period_map = get_lstm_cfg().get("period_map", {
             "5m": "5d", "15m": "60d", "30m": "60d",
             "1h": "3mo", "4h": "6mo", "1d": "1y",
-        }
+        })
         period = period_map.get(interval, "3mo")
         result = engine.make_predictions(symbol=symbol, period=period, interval=interval)
 

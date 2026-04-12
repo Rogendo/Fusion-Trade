@@ -1,19 +1,77 @@
 """Fusion intelligence endpoints."""
 from __future__ import annotations
 
+import logging
+import uuid
+from datetime import datetime, timezone
+
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
 
 from app.core.deps import get_current_verified_user, limiter
 from app.core.database import get_session
 from sqlmodel import Session
 from app.models.user import User
+from app.models.journal import PredictionJournal
 from app.schemas.fusion import (
     FinetuneRequest, FusionRequest, FusionResponse,
     SentimentBlock, LLMAnalysisBlock,
 )
 from app.services.fusion_service import get_fusion
+from app.services.journal_service import JournalService
 
+logger = logging.getLogger(__name__)
 router = APIRouter()
+
+
+def _log_journal_entry(db: Session, user: User, result: FusionResponse, symbol: str) -> None:
+    """
+    Persist one journal entry per timeframe from a fusion result.
+    Uses the most confident timeframe's signal as the primary signal.
+    Silently skips on any error — journal logging must never break the API.
+    """
+    try:
+        svc = JournalService(db)
+        tfs = result.timeframes or {}
+
+        # Pick best timeframe: highest agreement, fall back to any
+        best_interval = max(tfs, key=lambda k: tfs[k].agreement) if tfs else None
+        if not best_interval:
+            return
+
+        tf = tfs[best_interval]
+        t = result.targets
+
+        # Derive a single dominant signal from the fusion verdict
+        verdict_upper = result.verdict.upper()
+        if "BUY" in verdict_upper:
+            signal = "BUY"
+        elif "SELL" in verdict_upper:
+            signal = "SELL"
+        else:
+            signal = "HOLD"
+
+        entry = PredictionJournal(
+            id=str(uuid.uuid4()),
+            user_id=str(user.id),
+            symbol=symbol,
+            interval=best_interval,
+            signal=signal,
+            lstm_signal=tf.lstm,
+            patchtst_signal=tf.patchtst,
+            fusion_score=result.master_fusion_score,
+            entry_price=tf.current_price,
+            predicted_price=tf.predicted_price,
+            take_profit_1=t.tp1,
+            take_profit_2=t.tp2,
+            take_profit_3=t.tp3,
+            stop_loss=t.sl,
+            confidence=tf.lstm_confidence,
+            status="PENDING",
+            created_at=datetime.now(timezone.utc),
+        )
+        svc.create(entry)
+    except Exception as exc:
+        logger.warning("Journal logging failed (non-fatal): %s", exc)
 
 
 @router.get("/{symbol}", response_model=FusionResponse)
@@ -32,12 +90,16 @@ async def fusion_signal(
     and optionally FinBERT sentiment and Claude LLM analysis.
     """
     try:
-        return get_fusion(
+        result = get_fusion(
             db,
             symbol.upper(),
             include_sentiment=include_sentiment,
             include_llm=include_llm,
         )
+        _log_journal_entry(db, _, result, symbol.upper())
+        return result
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Fusion analysis failed: {e}")
 

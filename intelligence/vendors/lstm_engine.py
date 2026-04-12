@@ -298,14 +298,24 @@ class LSTMInferenceEngine:
 
     @staticmethod
     def _generate_signal(pred_change: float, dir_conf: float) -> Tuple[str, float]:
+        # Read thresholds from runtime config so UI changes take effect immediately
+        try:
+            from intelligence.runtime_config import get_patchtst_cfg
+            ptst = get_patchtst_cfg()
+            noise_thresh  = float(ptst.get("noise_threshold", NOISE_THRESHOLD))
+            strong_thresh = float(ptst.get("strong_signal_threshold", STRONG_THRESHOLD))
+        except Exception:
+            noise_thresh  = NOISE_THRESHOLD
+            strong_thresh = STRONG_THRESHOLD
+
         abs_change = abs(pred_change)
-        if abs_change < NOISE_THRESHOLD:
+        if abs_change < noise_thresh:
             return "HOLD", 0.0
-        if pred_change > STRONG_THRESHOLD:
+        if pred_change > strong_thresh:
             return "STRONG BUY", min(abs_change * 100, 1.0)
         if pred_change > 0:
             return "BUY", min(abs_change * 80, 0.8)
-        if pred_change < -STRONG_THRESHOLD:
+        if pred_change < -strong_thresh:
             return "STRONG SELL", min(abs_change * 100, 1.0)
         return "SELL", min(abs_change * 80, 0.8)
 

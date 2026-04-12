@@ -50,10 +50,15 @@ def _ensure_model_files(exports_dir: Path, sym_safe: str, interval: str) -> bool
 
 def _normalise_direction(
     probs,  # numpy array [prob_down, prob_flat, prob_up]
+    min_direction_prob: float = 0.45,
 ) -> tuple[str, float, float, float, float]:
     """
     Returns (signal, top_class_confidence, prob_up, prob_flat, prob_down).
     DIRECTION_CLASSES = {0: "DOWN", 1: "FLAT", 2: "UP"}
+
+    Signals with a winning class probability below min_direction_prob are
+    demoted to HOLD — this threshold is read from model_config.json at
+    runtime (patchtst.min_direction_prob).
     """
     import numpy as np
     prob_down = float(probs[0])
@@ -62,8 +67,12 @@ def _normalise_direction(
     cls_idx   = int(np.argmax(probs))
 
     if cls_idx == 2:
+        if prob_up < min_direction_prob:
+            return "HOLD", 0.0, prob_up, prob_flat, prob_down
         return "BUY",  prob_up,   prob_up, prob_flat, prob_down
     if cls_idx == 0:
+        if prob_down < min_direction_prob:
+            return "HOLD", 0.0, prob_up, prob_flat, prob_down
         return "SELL", prob_down, prob_up, prob_flat, prob_down
     # FLAT — emit HOLD with 0.0 confidence (signal not actionable)
     return "HOLD", 0.0, prob_up, prob_flat, prob_down
@@ -117,8 +126,12 @@ def get_patchtst_signal(symbol: str, interval: str) -> Optional[SignalResult]:
         with torch.no_grad():
             price_pred, dir_logits = model(x)
 
+        from intelligence.runtime_config import get_patchtst_cfg
+        ptst_cfg = get_patchtst_cfg()
+        min_dir_prob = float(ptst_cfg.get("min_direction_prob", 0.45))
+
         probs = torch.softmax(dir_logits[0], dim=-1).cpu().numpy()
-        signal, confidence, prob_up, prob_flat, prob_down = _normalise_direction(probs)
+        signal, confidence, prob_up, prob_flat, prob_down = _normalise_direction(probs, min_dir_prob)
 
         current_price   = float(df_feat["Close"].iloc[-1])
         predicted_price = float(price_pred[0, 0].item()) if price_pred is not None else current_price

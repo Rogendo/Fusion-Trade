@@ -74,7 +74,15 @@ def _build_verdict(dominant: str, score: float) -> str:
         return "HOLD"
     if dominant == "DIVERGENT":
         return "DIVERGENT (HOLD)"
-    conviction = "HIGH CONVICTION" if score >= 70 else "MODERATE" if score >= 50 else "WEAK"
+    try:
+        from intelligence.runtime_config import get_fusion_cfg
+        fusion_cfg = get_fusion_cfg()
+        high_thresh = float(fusion_cfg.get("high_conviction_threshold", 70))
+        mod_thresh  = float(fusion_cfg.get("moderate_threshold", 50))
+    except Exception:
+        high_thresh = 70
+        mod_thresh  = 50
+    conviction = "HIGH CONVICTION" if score >= high_thresh else "MODERATE" if score >= mod_thresh else "WEAK"
     return f"{conviction} {dominant}"
 
 
@@ -193,7 +201,10 @@ def get_fusion(
     if include_sentiment or include_llm:
         try:
             from intelligence.news_service import get_news_for_symbol
-            news_items = get_news_for_symbol(symbol, limit=15)
+            from intelligence.runtime_config import get_news_cfg
+            news_cfg   = get_news_cfg()
+            fetch_limit = int(news_cfg.get("fetch_limit", 15))
+            news_items = get_news_for_symbol(symbol, limit=fetch_limit)
         except Exception as e:
             logger.warning("News fetch failed for %s: %s", symbol, e)
 
@@ -206,6 +217,12 @@ def get_fusion(
                 raw_sentiment = cache_svc.update_cache(symbol)
 
             if raw_sentiment:
+                try:
+                    from intelligence.runtime_config import get_news_cfg
+                    headlines_in_response = int(get_news_cfg().get("headlines_in_response", 10))
+                except Exception:
+                    headlines_in_response = 10
+
                 sentiment_block = SentimentBlock(
                     overall_sentiment=raw_sentiment.get("overall_sentiment", "neutral"),
                     overall_score=round(raw_sentiment.get("overall_score", 0.0), 3),
@@ -223,7 +240,7 @@ def get_fusion(
                             "published": h.get("published", ""),
                             "link": h.get("link", ""),
                         }
-                        for h in news_items[:10]
+                        for h in news_items[:headlines_in_response]
                     ],
                 )
         except Exception as e:
@@ -295,12 +312,18 @@ def get_fusion(
                 except Exception as e:
                     logger.warning("OHLCV fallback fetch failed for %s: %s", symbol, e)
 
+            try:
+                from intelligence.runtime_config import get_news_cfg
+                headlines_for_llm = int(get_news_cfg().get("headlines_for_llm", 10))
+            except Exception:
+                headlines_for_llm = 10
+
             llm_input = FusionLLMInput(
                 symbol=symbol,
                 interval="4h",
                 ohlcv=best_ohlcv,
                 technical_indicators=best_indicators,
-                news_headlines=news_items[:10],
+                news_headlines=news_items[:headlines_for_llm],
                 sentiment=vars(sentiment_block) if sentiment_block else None,
                 lstm_signals=lstm_signals,
                 patchtst_signals=ptst_signals,
