@@ -37,7 +37,7 @@ const META: Record<string, SymbolMeta> = {
   // Exotic
   'USDCNY=X': { label: 'USD/CNY', decimals: 4, group: 'Exotic',       tvSymbol: 'FX:USDCNH' },
   // Commodities
-  'GC=F':     { label: 'Gold',    decimals: 2, group: 'Commodities',  tvSymbol: 'COMEX:GC1!' },
+  'GC=F':     { label: 'Gold',    decimals: 2, group: 'Commodities',  tvSymbol: 'TVC:GOLD' },
   // Crypto
   'BTC-USD':  { label: 'BTC/USD', decimals: 0, group: 'Crypto',       tvSymbol: 'BINANCE:BTCUSDT' },
 }

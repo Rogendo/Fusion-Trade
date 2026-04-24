@@ -41,7 +41,11 @@ client.interceptors.response.use(
   async (error) => {
     const original = error.config
 
-    if (error.response?.status === 401 && !original._retry) {
+    // Never retry auth endpoints — would cause infinite reload loop on /login
+    const url: string = original.url ?? ''
+    const isAuthEndpoint = url.includes('/auth/')
+
+    if (error.response?.status === 401 && !original._retry && !isAuthEndpoint) {
       original._retry = true
 
       if (_refreshing) {
@@ -61,7 +65,7 @@ client.interceptors.response.use(
       try {
         const res = await axios.post(
           '/api/v1/auth/refresh',
-          {},
+          null,   // null body — {} causes FastAPI 422 on RefreshRequest validation
           { withCredentials: true }
         )
         const newToken: string = res.data.access_token

@@ -5,11 +5,18 @@ interface Props {
   entries: JournalEntry[]
 }
 
+const COLS = [
+  'Symbol', 'TF', 'Signal', 'Conf',
+  'Entry', 'TP1', 'SL', 'Exit',
+  'Pips', 'Status', 'Outcome', 'Time'
+]
+
 export function JournalTable({ entries }: Props) {
   if (!entries.length) {
     return (
-      <div className="text-center py-12 text-slate-500 text-sm bg-terminal-surface border border-terminal-border rounded-xl">
-        No journal entries yet. Predictions will appear here after the daily run.
+      <div className="text-center py-16 text-slate-500 text-sm bg-terminal-surface border border-terminal-border rounded-xl">
+        <p className="mb-1">No journal entries yet.</p>
+        <p className="text-xs text-slate-600">Signals are logged automatically each time the prediction worker runs.</p>
       </div>
     )
   }
@@ -19,8 +26,8 @@ export function JournalTable({ entries }: Props) {
       <table className="w-full text-left">
         <thead>
           <tr className="border-b border-terminal-border bg-terminal-muted/50">
-            {['Symbol', 'TF', 'Signal', 'Models', 'Fusion', 'Entry', 'Exit', 'Pips', 'Status', 'Time'].map(h => (
-              <th key={h} className="px-4 py-3 text-[10px] text-slate-500 uppercase tracking-wider font-medium">
+            {COLS.map(h => (
+              <th key={h} className="px-3 py-3 text-[10px] text-slate-500 uppercase tracking-wider font-medium whitespace-nowrap">
                 {h}
               </th>
             ))}

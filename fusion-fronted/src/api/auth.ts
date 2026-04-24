@@ -14,8 +14,9 @@ export async function register(email: string, password: string, full_name: strin
 }
 
 export async function refreshToken(): Promise<LoginResponse> {
-  // Cookie is sent automatically (withCredentials on client); body empty is fine
-  const res = await client.post<LoginResponse>('/api/v1/auth/refresh', {}, { withCredentials: true })
+  // Send null body — {} causes FastAPI 422 because RefreshRequest.refresh_token is required
+  // With null, FastAPI treats body as None (RefreshRequest | None = None) and reads the httpOnly cookie
+  const res = await client.post<LoginResponse>('/api/v1/auth/refresh', null, { withCredentials: true })
   return res.data
 }
 

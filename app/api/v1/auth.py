@@ -1,6 +1,4 @@
 """Auth endpoints — register, login, refresh, verify, reset."""
-from __future__ import annotations
-
 from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from sqlmodel import Session
 

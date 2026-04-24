@@ -1,16 +1,16 @@
+import type { JournalOutcome } from '../../types/journal'
+
 const styles: Record<string, string> = {
-  win:     'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-  loss:    'bg-rose-500/20 text-rose-400 border-rose-500/30',
-  pending: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+  WIN:     'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+  LOSS:    'bg-rose-500/20 text-rose-400 border-rose-500/30',
+  NEUTRAL: 'bg-slate-500/20 text-slate-400 border-slate-500/30',
 }
 
-export function OutcomeBadge({ outcome, status }: { outcome: string | null; status: string }) {
-  const key = outcome?.toLowerCase() ?? status?.toLowerCase() ?? 'pending'
-  const cls = styles[key] ?? styles.pending
-  const label = outcome ?? status ?? 'PENDING'
+export function OutcomeBadge({ outcome }: { outcome: JournalOutcome }) {
+  if (!outcome) return null
   return (
-    <span className={`text-xs px-2 py-0.5 rounded border font-medium ${cls}`}>
-      {label.toUpperCase()}
+    <span className={`text-xs px-2 py-0.5 rounded border font-semibold ${styles[outcome] ?? styles.NEUTRAL}`}>
+      {outcome}
     </span>
   )
 }

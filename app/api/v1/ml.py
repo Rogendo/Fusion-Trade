@@ -1,5 +1,4 @@
 """ML management endpoints — model registry, worker triggers, runtime config."""
-from __future__ import annotations
 
 import copy
 import json

@@ -1,17 +1,19 @@
 """Trading journal endpoints."""
-from __future__ import annotations
 
+import logging
 from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query
+from sqlmodel import Session, select
 
 from app.core.deps import get_current_verified_user
+from app.core.database import get_session
+from app.models.journal import PredictionJournal
 from app.models.user import User
 from app.schemas.journal import JournalEntryResponse, JournalListResponse
 from app.services.journal_service import JournalService
-from app.core.database import get_session
-from sqlmodel import Session
 
+logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
@@ -67,8 +69,35 @@ async def get_entry(
 @router.post("/verify-now")
 async def trigger_verification(
     current_user: User = Depends(get_current_verified_user),
+    db: Session = Depends(get_session),
 ):
-    """Manually trigger the verification worker."""
-    from workers.tasks.verification import verify_pending_journals
-    task = verify_pending_journals.delay()
-    return {"task_id": task.id, "status": "queued"}
+    """
+    Manually verify all PENDING journal entries against live market data.
+    Runs inline — no Celery broker required.
+    """
+    # Import only the pure logic function, not the Celery task
+    from workers.tasks.verification import _verify_entry
+
+    pending = db.exec(
+        select(PredictionJournal).where(PredictionJournal.status == "PENDING")
+    ).all()
+
+    checked = len(pending)
+    errors = 0
+    for entry in pending:
+        try:
+            _verify_entry(db, entry)
+        except Exception as e:
+            logger.warning("Verification failed for entry %s: %s", entry.id[:8], e)
+            errors += 1
+
+    db.commit()
+    logger.info("Manual verification: checked=%d errors=%d", checked, errors)
+
+    return {
+        "status": "completed",
+        "result": {
+            "verified": checked,
+            "errors": errors,
+        },
+    }

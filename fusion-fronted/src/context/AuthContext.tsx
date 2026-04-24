@@ -1,7 +1,9 @@
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react'
+import axios from 'axios'
 import type { User } from '../types/auth'
 import * as authApi from '../api/auth'
 import { setToken } from '../api/client'
+import client from '../api/client'
 
 interface AuthContextValue {
   user: User | null
@@ -19,18 +21,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [token, setTokenState] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
 
-  // On mount — try silent refresh via httpOnly cookie
+  // On mount — try silent refresh using raw axios (bypasses the 401-retry interceptor)
+  // so a failed refresh on the login page doesn't trigger a redirect loop.
   useEffect(() => {
-    authApi
-      .refreshToken()
-      .then(async (data) => {
-        setToken(data.access_token)
-        setTokenState(data.access_token)
-        const me = await authApi.getMe()
-        setUser(me)
+    axios
+      .post<{ access_token: string }>('/api/v1/auth/refresh', null, { withCredentials: true })
+      .then(async (res) => {
+        const accessToken = res.data.access_token
+        setToken(accessToken)
+        setTokenState(accessToken)
+        const me = await client.get<User>('/api/v1/auth/me')
+        setUser(me.data)
       })
       .catch(() => {
-        // No valid session — that's fine, user needs to log in
+        // No valid session — user needs to log in, that's expected
       })
       .finally(() => setIsLoading(false))
   }, [])
@@ -39,8 +43,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const data = await authApi.login(email, password)
     setToken(data.access_token)
     setTokenState(data.access_token)
-    const me = await authApi.getMe()
-    setUser(me)
+    const me = await client.get<User>('/api/v1/auth/me')
+    setUser(me.data)
   }, [])
 
   const logout = useCallback(async () => {

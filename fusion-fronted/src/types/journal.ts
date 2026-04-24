@@ -1,3 +1,6 @@
+export type JournalStatus = 'PENDING' | 'TP1_HIT' | 'TP2_HIT' | 'TP3_HIT' | 'SL_HIT' | 'EXPIRED' | 'IGNORED'
+export type JournalOutcome = 'WIN' | 'LOSS' | 'NEUTRAL' | null
+
 export interface JournalEntry {
   id: string
   symbol: string
@@ -12,8 +15,8 @@ export interface JournalEntry {
   take_profit_3: number | null
   stop_loss: number | null
   confidence: number | null
-  status: string          // 'pending', 'closed', etc.
-  outcome: string | null  // 'win', 'loss', null
+  status: JournalStatus
+  outcome: JournalOutcome
   exit_price: number | null
   pips: number | null
   created_at: string
@@ -25,7 +28,7 @@ export interface JournalStats {
   wins: number
   losses: number
   pending: number
-  win_rate: number
+  win_rate: number        // 0–100
   profit_factor: number
   total_pips: number
   max_drawdown: number

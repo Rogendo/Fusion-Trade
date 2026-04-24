@@ -118,7 +118,7 @@ fusion_trade/
 
 ### JWT Authentication (python-jose + passlib/bcrypt)
 
-Modelled after JengaAI. Access tokens expire in 30 minutes, refresh tokens in 7 days. Refresh tokens are delivered as `httpOnly` cookies for XSS protection. Email verification uses single-use 64-char tokens (24h expiry). Password reset tokens expire in 15 minutes.
+Access tokens expire in 30 minutes, refresh tokens in 7 days. Refresh tokens are delivered as `httpOnly` cookies for XSS protection. Email verification uses single-use 64-char tokens (24h expiry). Password reset tokens expire in 15 minutes.
 
 ### Agreement Algorithm
 

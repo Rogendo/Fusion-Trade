@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+build/
+venv/
+.venv/
+*.egg
+
+# Node / Frontend — only exclude heavy dirs, NOT dist (Stage 1 needs it)
+fusion-fronted/node_modules/
+fusion-fronted/.cache/
+
+# Dev artifacts
+.git/
+.gitignore
+*.log
+app_logs.out
+backend_logs/
+backend_logs.out
+nohup.out
+
+# Secrets (use .env file — never bake secrets into image)
+# .env is intentionally NOT ignored — docker compose reads it via env_file
+
+# Large files
+*.h5
+*.pt
+*.onnx
+# HuggingFace cache handled via Docker volume — don't bake into image
+.cache/

@@ -94,19 +94,67 @@ def _build_symbol_block(symbol: str, include_llm: bool) -> str:
           <small style="color:#666;">+{s.positive_count} bullish / -{s.negative_count} bearish / {s.neutral_count} neutral from {s.news_count} headlines</small>
         </div>"""
 
-    # LLM block
+    # LLM block — full reasoning
     llm_html = ""
     if result.llm_analysis:
         llm = result.llm_analysis
         llm_color = _verdict_color(llm.action)
         agree_label = "✅ Validates Fusion" if llm.validates_fusion else "⚠️ Challenges Fusion"
+        agree_bg = "#0a1a0a" if llm.validates_fusion else "#1a0e00"
+
+        # Key levels
+        kl = llm.key_levels or {}
+        kl_parts = []
+        if kl.get("tp1"):   kl_parts.append(f'TP1: <b style="color:#00ff88;">{kl["tp1"]}</b>')
+        if kl.get("tp2"):   kl_parts.append(f'TP2: <b style="color:#00cc66;">{kl["tp2"]}</b>')
+        if kl.get("stop_loss"): kl_parts.append(f'SL: <b style="color:#ff4444;">{kl["stop_loss"]}</b>')
+        kl_html = " &nbsp;|&nbsp; ".join(kl_parts)
+
+        # Risk warnings
+        warnings = llm.warnings or []
+        warnings_html = ""
+        if warnings:
+            w_items = "".join(f'<li style="margin:2px 0;color:#ff8800;">⚠️ {w}</li>' for w in warnings)
+            warnings_html = f'<ul style="margin:6px 0 0 0;padding-left:16px;font-size:11px;">{w_items}</ul>'
+
+        # Divergence reason
+        divergence_html = ""
+        if llm.divergence_reason:
+            divergence_html = f'<div style="margin-top:6px;padding:6px 8px;background:#1a0800;border-radius:4px;color:#ff8800;font-size:12px;">⚠️ {llm.divergence_reason}</div>'
+
         llm_html = f"""
-        <div style="margin-top:12px;padding:10px;background:#0a1a0a;border-left:3px solid {llm_color};border-radius:4px;">
-          <b style="color:#aaa;">🤖 Claude Analysis:</b>
-          <span style="color:{llm_color};font-weight:bold;"> {llm.action}</span>
-          ({llm.confidence_level.upper()}) — {agree_label}<br>
-          <small style="color:#aaa;font-style:italic;">{llm.market_structure[:200]}...</small>
-          {'<br><small style="color:#ff8800;">⚠️ ' + llm.divergence_reason + '</small>' if llm.divergence_reason else ''}
+        <div style="margin-top:14px;padding:12px;background:{agree_bg};border-left:4px solid {llm_color};border-radius:6px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <b style="color:#ccc;font-size:13px;">🤖 Claude AI Analysis</b>
+            <span style="font-size:11px;color:#888;">{agree_label}</span>
+          </div>
+
+          <div style="margin-bottom:8px;">
+            <span style="color:{llm_color};font-weight:bold;font-size:16px;">{llm.action}</span>
+            <span style="color:#888;font-size:12px;margin-left:8px;">{llm.confidence_level.upper()} confidence</span>
+            <span style="color:#666;font-size:12px;margin-left:8px;">· Independent bias: <b style="color:#aaa;">{llm.independent_bias}</b></span>
+          </div>
+
+          {divergence_html}
+
+          <div style="margin-top:10px;">
+            <div style="color:#888;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px;">Market Structure</div>
+            <div style="color:#ccc;font-size:12px;line-height:1.5;">{llm.market_structure}</div>
+          </div>
+
+          <div style="margin-top:10px;">
+            <div style="color:#888;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px;">News Impact</div>
+            <div style="color:#ccc;font-size:12px;line-height:1.5;">{llm.news_impact}</div>
+          </div>
+
+          <div style="margin-top:10px;">
+            <div style="color:#888;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px;">Entry Strategy</div>
+            <div style="color:#ccc;font-size:12px;line-height:1.5;">{llm.entry_strategy}</div>
+          </div>
+
+          {f'<div style="margin-top:10px;font-size:12px;color:#aaa;">{kl_html}</div>' if kl_html else ''}
+
+          {warnings_html}
         </div>"""
 
     # Targets
