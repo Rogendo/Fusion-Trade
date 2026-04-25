@@ -259,8 +259,6 @@ HF_TST_REPO=rogendo/forex-patchtst-models
 CLAUDE_API_KEY=sk-ant-api03-...
 CLAUDE_MODEL=claude-sonnet-4-20250514
 
-# FX Project Path
-FX_PROJECT_PATH=/home/naynek/Desktop/Backup/FX/FX
 
 # Newsletter
 NEWSLETTER_ENABLED=false          # Set to true for automatic daily emails at 07:00 UTC
@@ -272,8 +270,8 @@ NEWSLETTER_ENABLED=false          # Set to true for automatic daily emails at 07
 
 **Activate the venv first:**
 ```bash
-source /home/naynek/Desktop/Backup/FX/FX/venv/bin/activate
-cd /home/naynek/Desktop/Backup/FX/fusion_trade
+source venv/bin/activate
+cd fusion_trade
 ```
 
 **Start the API server:**
@@ -296,7 +294,7 @@ redis-server &
 
 **Start Celery worker:**
 ```bash
-cd /home/naynek/Desktop/Backup/FX/fusion_trade
+cd fusion_trade
 celery -A workers.celery_app worker --loglevel=info
 ```
 
@@ -389,8 +387,8 @@ The HTML email includes per symbol:
 
 ```bash
 # Start server first
-cd /home/naynek/Desktop/Backup/FX/fusion_trade
-source /home/naynek/Desktop/Backup/FX/FX/venv/bin/activate
+cd fusion_trade
+source venv/bin/activate
 uvicorn app.main:app --host 0.0.0.0 --port 2001
 
 # In another terminal, get a token
