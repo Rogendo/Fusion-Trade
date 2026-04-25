@@ -49,12 +49,8 @@
 ### FX Project Dependency
 
 FusionTrade reuses the trained LSTM models, FinBERT sentiment analyzer, and news
-scraping service from the parent `FX/` project. The `intelligence/` layer wraps
+scraping service. The `intelligence/` layer wraps
 these via `sys.path` injection rather than duplicating 100k+ lines of ML code.
-
-**`FX_PROJECT_PATH`** in `.env` controls where these are loaded from.
-
-> Future goal: migrate all ML services into `fusion_trade/` to make it standalone.
 
 ---
 
